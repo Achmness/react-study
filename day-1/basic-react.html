@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <div class="exercise-1a"></div>
+    <div class="exercise-1b"></div>
+    <div class="exercise-1c"></div>
+    <div class="exercise-1e"></div>
+    <div class="exercise-1f"></div>
+    <div class="exercise-1h"></div>
+    <div class="exercise-1i"></div>
+
+    <script src="react-js.js"></script>
+
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">  
+      
+
+      const button = (
+        <>
+          <p>Exercise 1a</p>
+          <button>Good Job!</button>
+        </>
+      );
+
+      const name = 'Allen';
+      const paragraphName = (
+        <>
+          <p>Exercise 1b</p>
+          <p>My name is {name}</p>
+        </>
+      );
+
+      const itemPriceButton = (
+        <>
+          <p>Exercise 1c</p>
+          <p>Cotton Socks</p>
+          <p>Price: $10</p>
+          <button>Add to Cart</button>
+        </>
+      );
+   
+      const productCost = 10 + 2 * 8;
+      console.log(productCost);
+      
+      const displayProductCost = (
+        <>
+          <p>Exercise 1e</p>
+          <p>Product Cost: ${productCost}</p>
+        </>
+      );
+
+      const shippingCost = 5;
+
+      const displayReceipt = (
+        <>
+          <p>Exercise 1f</p>
+          <p>Product Cost: ${productCost}</p>
+          <p>Shipping Cost: ${shippingCost}</p>
+          <p>Total Cost: ${productCost + shippingCost}</p>
+          <button>Place your order</button>
+        </>
+
+      );
+     
+      console.log(dayjs().format('MMMM D'));
+
+      const todayDate = (
+        <>
+          <p>Exercise 1h</p>
+          <p>Today is {dayjs().format('MMMM D')}</p>
+        </>
+      );
+
+      console.log(dayjs().format('HH:mm:ss'));
+
+      const currentTime = <p>Current Time: {dayjs().format('HH:mm:ss')}</p>;
+
+      const exercise1a = document.querySelector('.exercise-1a');
+      ReactDOM.createRoot(exercise1a).render(button);
+
+      const exercise1b = document.querySelector('.exercise-1b');
+      ReactDOM.createRoot(exercise1b).render(paragraphName);
+
+      const exercise1c = document.querySelector('.exercise-1c');
+      ReactDOM.createRoot(exercise1c).render(itemPriceButton);
+
+      const exercise1e = document.querySelector('.exercise-1e');
+      ReactDOM.createRoot(exercise1e).render(displayProductCost);
+
+      const exercise1f = document.querySelector('.exercise-1f');
+      ReactDOM.createRoot(exercise1f).render(displayReceipt);
+
+      const exercise1h = document.querySelector('.exercise-1h');
+      ReactDOM.createRoot(exercise1h).render(todayDate);
+
+      const exercise1i = document.querySelector('.exercise-1i');
+      const root = ReactDOM.createRoot(exercise1i);
+      root.render(currentTime);
+      setInterval(() => {
+        const currentTime = (
+          <>
+            <p>Exercise 1i</p>
+            <p>Current Time: {dayjs().format('HH:mm:ss')}</p>
+          </>
+        );
+        root.render(currentTime);
+      }, 1000)
+      
+    </script>
+  </body>
+</html>
