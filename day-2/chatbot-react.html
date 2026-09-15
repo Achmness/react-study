@@ -11,6 +11,42 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
+
+      function ChatMessages () {
+        const chatMessages = [{
+        message: 'hello chatbot',
+        sender: 'user',
+        id: 'id1'
+      }, {
+        message: 'Hello! how can I help you?',
+        sender: 'robot',
+        id: 'id2'
+      }, {
+        message: 'can you get me todays date', 
+        sender: 'user',
+        id: 'id3'
+      }, {
+        message: 'Today is September 27', 
+        sender: 'robot',
+        id: 'id4'
+      }];
+
+      return (
+        chatMessages.map((chatMessage) => {
+          return (
+            <ChatMessage 
+              message={chatMessage.message}
+              sender={chatMessage.sender}
+              key={chatMessage.id}
+            />
+          );
+        })
+      );
+      }
+
+     
+      
+
       function ChatMessage ({message, sender}) {
         return (
           <div>
@@ -43,22 +79,7 @@
         return (
           <>
            <ChatInput />
-           <ChatMessage 
-            message='hello chatbot' 
-            sender='user' 
-           />
-           <ChatMessage 
-            message='Hello! how can I help you?' 
-            sender='robot' 
-           />
-           <ChatMessage 
-            message='can you get me todays date' 
-            sender='user' 
-           />
-           <ChatMessage 
-            message='Today is September 27' 
-            sender='robot' 
-           />
+           <ChatMessages />
           </>
         );
       }
