@@ -16,8 +16,14 @@
         return (
           <div>  
             {products}
-            <p>Price: {price}</p>
-            <p>Discount Price: {discountPrice}</p>
+            {!!discountPrice ? (
+              <>
+                <del><p>Price: {price}</p></del>
+                <p>Discount Price: {discountPrice}</p>
+              </>
+            ) : (
+              <p>Price: {price}</p>
+            )}
             <button>Add to Cart</button>
           </div>
         );
